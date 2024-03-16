@@ -18,7 +18,15 @@ const routes = [{
         name: "contact.edit",
         component: () => import("@/views/ContactEdit.vue"),
         props: true // Truyền các biến trong $route.params vào làm props
-        },
+    },
+    {
+        path: "/contacts/add", // Đường dẫn mới để thêm liên hệ mới
+        name: "contact.add", // Tên mới cho route
+        component: () => import("@/views/ContactAdd.vue"), // Sử dụng cùng một component nhưng với mục đích thêm mới
+        props: {
+            isNewContact: true
+        }, // Sử dụng props để đánh dấu là thêm mới
+    },
 ];
 const router = createRouter({
     history: createWebHistory(

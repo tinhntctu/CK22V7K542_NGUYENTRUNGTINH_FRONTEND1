@@ -111,7 +111,9 @@ export default {
     return {
       // Chúng ta sẽ không muốn hiệu chỉnh props, nên tạo biến cục bộ
       // contactLocal để liên kết với các input trên form
-      contactLocal: this.contact,
+      // contactLocal: this.contact,
+      // contactFormSchema,
+      contactLocal: { ...this.contact }, // Tạo một bản sao của đối tượng contact để tránh ảnh hưởng đến dữ liệu gốc
       contactFormSchema,
     };
   },
